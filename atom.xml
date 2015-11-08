@@ -4,7 +4,7 @@
   <subtitle><![CDATA[~心有多大，舞台就有多大~]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiao-jian.github.io/"/>
-  <updated>2015-11-08T08:01:23.535Z</updated>
+  <updated>2015-11-08T08:40:42.120Z</updated>
   <id>http://xiao-jian.github.io/</id>
   
   <author>
@@ -15,46 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[调出grub并应用其引导Windows+Ubuntu启动]]></title>
-    <link href="http://xiao-jian.github.io/2015/11/08/opengrub2/"/>
-    <id>http://xiao-jian.github.io/2015/11/08/opengrub2/</id>
-    <published>2015-11-08T07:17:55.000Z</published>
-    <updated>2015-11-08T08:01:23.535Z</updated>
-    <content type="html"><![CDATA[<p>今天一个室友安装 <strong>Windows+Ubuntu</strong> 双系统，碰上一个小问题，现在记录下来。<br>其实只是一个很简单的问题，但是对于没有用过<strong>linux</strong>系统的少年可能很难，但是有那么句话嘛</p>
-<blockquote>
-<p>无折腾不少年</p>
-</blockquote>
-<p>所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||<br><a id="more"></a></p>
-<h2 id="唠完了，以下是正题">唠完了，以下是正题</h2><p>问题是装完<strong>Ubuntu</strong>后重启直接进入了<strong>Ubuntu</strong>，而没有引导界面</p>
-<h2 id="解决方法">解决方法</h2><p>首先打开终端输入以下代码：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> update-grub</span><br></pre></td></tr></table></figure></p>
-<p>输入用户密码后看到以下信息：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Generating grub configuration file ...</span><br><span class="line"><span class="string">Warning:</span> Setting GRUB_TIMEOUT to a non-zero value when GRUB_HIDDEN_TIMEOUT is set is no longer supported.</span><br><span class="line">Found linux <span class="string">image:</span> <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span><span class="number">.0</span>-<span class="number">23</span>-generic</span><br><span class="line">Found initrd <span class="string">image:</span> <span class="regexp">/boot/</span>initrd.img-<span class="number">3.16</span><span class="number">.0</span>-<span class="number">23</span>-generic</span><br><span class="line">Found memtest86+ <span class="string">image:</span> <span class="regexp">/boot/</span>memtest86+.elf</span><br><span class="line">Found memtest86+ <span class="string">image:</span> <span class="regexp">/boot/</span>memtest86+.bin</span><br><span class="line">Found Windows <span class="number">8</span> (loader) on <span class="regexp">/dev/</span>sda1</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
-<p>发现可以找到windows，那为什么没有<strong>grub</strong>的引导呢<br>我们输入以下代码看看<strong>grub</strong>的默认配置文件<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="regexp">/etc/</span>defauit<span class="regexp">/grub</span></span><br></pre></td></tr></table></figure></p>
-<p>我们发现<strong>GRUB_HIDDEN_TIMEOUT</strong>项的值为0<br>将<code>GRUB_HIDDEN_TIMEOUT=0</code>改为<code>GRUB_HIDDEN_TIMEOUT=1</code>试试</p>
-<p>然后再<code>sudo update-grub</code>更新grub配置<br>最后<code>sudo reboot</code>重启系统。</p>
-<p>结果是出现了<strong>grub</strong>引导且有windows项，问题就这么被我们解决了，想想真的挺简单的。</p>
-<h2 id="再附上一个修改grub试windows为第一启动想的方法">再附上一个修改grub试windows为第一启动想的方法</h2><p>输入<code>sudo nautilus</code>以管理员身份打开文件管理器，图形化界面进入<code>/etc/grub.d</code>目录，将文件<strong>30_os-prober</strong>的文件名中的<strong>30</strong>改为<strong>5~10中的一个（不包括5和10）</strong></p>
-<p>然后再<code>sudo update-grub</code>更新grub配置<br>最后<code>sudo reboot</code>重启系统。</p>
-<p>重启后<strong>Windows 8 (loader) on</strong>就在第一项了，默认进入的也是<strong>windows</strong></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今天一个室友安装 <strong>Windows+Ubuntu</strong> 双系统，碰上一个小问题，现在记录下来。<br>其实只是一个很简单的问题，但是对于没有用过<strong>linux</strong>系统的少年可能很难，但是有那么句话嘛</p>
-<blockquote>
-<p>无折腾不少年</p>
-</blockquote>
-<p>所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||<br>]]>
-    
-    </summary>
-    
-      <category term="Ubuntu" scheme="http://xiao-jian.github.io/categories/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[记录Hexo + Github Pages的第一次接触]]></title>
-    <link href="http://xiao-jian.github.io/2015/11/08/MyFirst/"/>
-    <id>http://xiao-jian.github.io/2015/11/08/MyFirst/</id>
-    <published>2015-11-07T16:41:58.823Z</published>
-    <updated>2015-11-07T16:41:58.823Z</updated>
+    <link href="http://xiao-jian.github.io/2020/11/08/MyFirst/"/>
+    <id>http://xiao-jian.github.io/2020/11/08/MyFirst/</id>
+    <published>2020-11-08T07:17:55.000Z</published>
+    <updated>2015-11-08T08:40:42.120Z</updated>
     <content type="html"><![CDATA[<ul>
 <li><font size="5"><strong>心情写照</strong></font></li>
 <li><font size="5"><strong>博客搭建过程</strong></font>
@@ -94,8 +59,8 @@
     <title><![CDATA[Hello World]]></title>
     <link href="http://xiao-jian.github.io/2015/11/08/hello-world/"/>
     <id>http://xiao-jian.github.io/2015/11/08/hello-world/</id>
-    <published>2015-11-07T16:41:54.473Z</published>
-    <updated>2015-11-07T16:41:54.473Z</updated>
+    <published>2015-11-08T08:39:36.779Z</published>
+    <updated>2015-11-08T08:39:36.779Z</updated>
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
@@ -112,6 +77,41 @@
     </summary>
     
       <category term="Hexo" scheme="http://xiao-jian.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[调出grub并应用其引导Windows+Ubuntu启动]]></title>
+    <link href="http://xiao-jian.github.io/2015/11/08/opengrub2/"/>
+    <id>http://xiao-jian.github.io/2015/11/08/opengrub2/</id>
+    <published>2015-11-08T07:17:55.000Z</published>
+    <updated>2015-11-08T08:39:05.628Z</updated>
+    <content type="html"><![CDATA[<p>今天一个室友安装 <strong>Windows+Ubuntu</strong> 双系统，碰上一个小问题，现在记录下来。<br>其实只是一个很简单的问题，但是对于没有用过<strong>linux</strong>系统的少年可能很难，但是有那么句话嘛</p>
+<blockquote>
+<p>无折腾不少年</p>
+</blockquote>
+<p>所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||<br><a id="more"></a></p>
+<h2 id="唠完了，以下是正题">唠完了，以下是正题</h2><p>问题是装完<strong>Ubuntu</strong>后重启直接进入了<strong>Ubuntu</strong>，而没有引导界面</p>
+<h2 id="解决方法">解决方法</h2><p>首先打开终端输入以下代码：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> update-grub</span><br></pre></td></tr></table></figure></p>
+<p>输入用户密码后看到以下信息：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Generating grub configuration file ...</span><br><span class="line"><span class="string">Warning:</span> Setting GRUB_TIMEOUT to a non-zero value when GRUB_HIDDEN_TIMEOUT is set is no longer supported.</span><br><span class="line">Found linux <span class="string">image:</span> <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span><span class="number">.0</span>-<span class="number">23</span>-generic</span><br><span class="line">Found initrd <span class="string">image:</span> <span class="regexp">/boot/</span>initrd.img-<span class="number">3.16</span><span class="number">.0</span>-<span class="number">23</span>-generic</span><br><span class="line">Found memtest86+ <span class="string">image:</span> <span class="regexp">/boot/</span>memtest86+.elf</span><br><span class="line">Found memtest86+ <span class="string">image:</span> <span class="regexp">/boot/</span>memtest86+.bin</span><br><span class="line">Found Windows <span class="number">8</span> (loader) on <span class="regexp">/dev/</span>sda1</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>发现可以找到windows，那为什么没有<strong>grub</strong>的引导呢<br>我们输入以下代码看看<strong>grub</strong>的默认配置文件<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="regexp">/etc/</span>defauit<span class="regexp">/grub</span></span><br></pre></td></tr></table></figure></p>
+<p>我们发现<strong>GRUB_HIDDEN_TIMEOUT</strong>项的值为0<br>将<code>GRUB_HIDDEN_TIMEOUT=0</code>改为<code>GRUB_HIDDEN_TIMEOUT=1</code>试试</p>
+<p>然后再<code>sudo update-grub</code>更新grub配置<br>最后<code>sudo reboot</code>重启系统。</p>
+<p>结果是出现了<strong>grub</strong>引导且有windows项，问题就这么被我们解决了，想想真的挺简单的。</p>
+<h2 id="再附上一个修改grub试windows为第一启动想的方法">再附上一个修改grub试windows为第一启动想的方法</h2><p>输入<code>sudo nautilus</code>以管理员身份打开文件管理器，图形化界面进入<code>/etc/grub.d</code>目录，将文件<strong>30_os-prober</strong>的文件名中的<strong>30</strong>改为<strong>5~10中的一个（不包括5和10）</strong></p>
+<p>然后再<code>sudo update-grub</code>更新grub配置<br>最后<code>sudo reboot</code>重启系统。</p>
+<p>重启后<strong>Windows 8 (loader) on</strong>就在第一项了，默认进入的也是<strong>windows</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天一个室友安装 <strong>Windows+Ubuntu</strong> 双系统，碰上一个小问题，现在记录下来。<br>其实只是一个很简单的问题，但是对于没有用过<strong>linux</strong>系统的少年可能很难，但是有那么句话嘛</p>
+<blockquote>
+<p>无折腾不少年</p>
+</blockquote>
+<p>所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||<br>]]>
+    
+    </summary>
+    
+      <category term="Ubuntu" scheme="http://xiao-jian.github.io/categories/Ubuntu/"/>
     
   </entry>
   
