@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[笑卒见清晰的博客]]></title>
-  <subtitle><![CDATA[~心有多大，舞台就有多大~]]></subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiao-jian.github.io/"/>
   <updated>2015-11-08T08:44:11.135Z</updated>
