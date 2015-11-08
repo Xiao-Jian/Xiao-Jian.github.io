@@ -3,18 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | 笑卒见清晰的博客</title>
+  <title>调出grub并应用其引导Windows+Ubuntu启动 | 笑卒见清晰的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="今天一个室友安装 Windows+Ubuntu 双系统，碰上一个小问题，现在记录下来。其实只是一个很简单的问题，但是对于没有用过linux系统的少年可能很难，但是有那么句话嘛
+
+无折腾不少年
+
+所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://xiao-jian.github.io/2015/11/08/hello-world/index.html">
+<meta property="og:title" content="调出grub并应用其引导Windows+Ubuntu启动">
+<meta property="og:url" content="http://xiao-jian.github.io/2015/11/08/opengrub2/index.html">
 <meta property="og:site_name" content="笑卒见清晰的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2015-11-07T16:41:54.473Z">
+<meta property="og:description" content="今天一个室友安装 Windows+Ubuntu 双系统，碰上一个小问题，现在记录下来。其实只是一个很简单的问题，但是对于没有用过linux系统的少年可能很难，但是有那么句话嘛
+
+无折腾不少年
+
+所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||">
+<meta property="og:updated_time" content="2015-11-08T08:01:23.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="调出grub并应用其引导Windows+Ubuntu启动">
+<meta name="twitter:description" content="今天一个室友安装 Windows+Ubuntu 双系统，碰上一个小问题，现在记录下来。其实只是一个很简单的问题，但是对于没有用过linux系统的少年可能很难，但是有那么句话嘛
+
+无折腾不少年
+
+所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||">
   
   
     <link rel="icon" href="favicon.png">
@@ -122,16 +134,8 @@
 </aside>
 
       
-      <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-opengrub2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      
-	
-		<img src="http://7xo385.com1.z0.glb.clouddn.com/banner.jpg" class="article-banner">
-	
-
-
-
     
     
     
@@ -139,7 +143,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      调出grub并应用其引导Windows+Ubuntu启动
     </h1>
   
 
@@ -147,54 +151,59 @@
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/11/08/hello-world/">
-      <time datetime="2015-11-07T16:41:54.473Z" itemprop="datePublished">2015-11-08</time>
+    <a href="/2015/11/08/opengrub2/">
+      <time datetime="2015-11-08T07:17:55.000Z" itemprop="datePublished">2015-11-08</time>
     </a>
   </div>
 
 
           
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Ubuntu/">Ubuntu</a>
+  </div>
+
         </div>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>今天一个室友安装 <strong>Windows+Ubuntu</strong> 双系统，碰上一个小问题，现在记录下来。<br>其实只是一个很简单的问题，但是对于没有用过<strong>linux</strong>系统的少年可能很难，但是有那么句话嘛</p>
+<blockquote>
+<p>无折腾不少年</p>
+</blockquote>
+<p>所以只是需要我们多百度查找网上的教程就好了，自己折腾还会记忆深刻呢(^_^)|||<br><a id="more"></a></p>
+<h2 id="唠完了，以下是正题">唠完了，以下是正题</h2><p>问题是装完<strong>Ubuntu</strong>后重启直接进入了<strong>Ubuntu</strong>，而没有引导界面</p>
+<h2 id="解决方法">解决方法</h2><p>首先打开终端输入以下代码：<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">sudo</span> update-grub</span><br></pre></td></tr></table></figure></p>
+<p>输入用户密码后看到以下信息：<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Generating grub configuration file ...</span><br><span class="line"><span class="string">Warning:</span> Setting GRUB_TIMEOUT to a non-zero value when GRUB_HIDDEN_TIMEOUT is set is no longer supported.</span><br><span class="line">Found linux <span class="string">image:</span> <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span><span class="number">.0</span>-<span class="number">23</span>-generic</span><br><span class="line">Found initrd <span class="string">image:</span> <span class="regexp">/boot/</span>initrd.img-<span class="number">3.16</span><span class="number">.0</span>-<span class="number">23</span>-generic</span><br><span class="line">Found memtest86+ <span class="string">image:</span> <span class="regexp">/boot/</span>memtest86+.elf</span><br><span class="line">Found memtest86+ <span class="string">image:</span> <span class="regexp">/boot/</span>memtest86+.bin</span><br><span class="line">Found Windows <span class="number">8</span> (loader) on <span class="regexp">/dev/</span>sda1</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>发现可以找到windows，那为什么没有<strong>grub</strong>的引导呢<br>我们输入以下代码看看<strong>grub</strong>的默认配置文件<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit <span class="regexp">/etc/</span>defauit<span class="regexp">/grub</span></span><br></pre></td></tr></table></figure></p>
+<p>我们发现<strong>GRUB_HIDDEN_TIMEOUT</strong>项的值为0<br>将<code>GRUB_HIDDEN_TIMEOUT=0</code>改为<code>GRUB_HIDDEN_TIMEOUT=1</code>试试</p>
+<p>然后再<code>sudo update-grub</code>更新grub配置<br>最后<code>sudo reboot</code>重启系统。</p>
+<p>结果是出现了<strong>grub</strong>引导且有windows项，问题就这么被我们解决了，想想真的挺简单的。</p>
+<h2 id="再附上一个修改grub试windows为第一启动想的方法">再附上一个修改grub试windows为第一启动想的方法</h2><p>输入<code>sudo nautilus</code>以管理员身份打开文件管理器，图形化界面进入<code>/etc/grub.d</code>目录，将文件<strong>30_os-prober</strong>的文件名中的<strong>30</strong>改为<strong>5~10中的一个（不包括5和10）</strong></p>
+<p>然后再<code>sudo update-grub</code>更新grub配置<br>最后<code>sudo reboot</code>重启系统。</p>
+<p>重启后<strong>Windows 8 (loader) on</strong>就在第一项了，默认进入的也是<strong>windows</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://xiao-jian.github.io/2015/11/08/hello-world/" data-id="cigq8fuch0006v8s29uerighu" class="article-share-link">分享到</a>
+      <a data-url="http://xiao-jian.github.io/2015/11/08/opengrub2/" data-id="cigq8fuch0003v8s2cj8iqi7x" class="article-share-link">分享到</a>
       
-        <a href="http://xiao-jian.github.io/2015/11/08/hello-world/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://xiao-jian.github.io/2015/11/08/opengrub2/#ds-thread" class="article-comment-link">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2015/11/08/MyFirst/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          记录Hexo + Github Pages的第一次接触
-        
-      </div>
-    </a>
   
+    <a href="/2015/11/08/MyFirst/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">记录Hexo + Github Pages的第一次接触</div>
+    </a>
   
 </nav>
 
@@ -204,7 +213,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="http://xiao-jian.github.io/2015/11/08/hello-world/" data-title="Hello World" data-url="http://xiao-jian.github.io/2015/11/08/hello-world/">
+    <div id="ds-thread" class="ds-thread" data-thread-key="http://xiao-jian.github.io/2015/11/08/opengrub2/" data-title="调出grub并应用其引导Windows+Ubuntu启动" data-url="http://xiao-jian.github.io/2015/11/08/opengrub2/">
       <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
       </div>
   </section>
