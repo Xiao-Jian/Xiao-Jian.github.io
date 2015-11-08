@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://xiao-jian.github.io/"/>
-  <updated>2015-11-08T08:39:36.779Z</updated>
+  <updated>2015-11-08T13:25:31.483Z</updated>
   <id>http://xiao-jian.github.io/</id>
   
   <author>
@@ -13,6 +13,19 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[[object Object]]]></title>
+    <link href="http://xiao-jian.github.io/2015/11/08/photo/"/>
+    <id>http://xiao-jian.github.io/2015/11/08/photo/</id>
+    <published>2015-11-08T13:25:31.483Z</published>
+    <updated>2015-11-08T13:25:31.483Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>
